@@ -28,7 +28,7 @@ SECRET_KEY = 'r6_-&a=nh5-g$wp!3ghym=lzd3)yzt)x^ltalja!ujnop=)*(w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kraljiccar-botique-ado.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -121,6 +121,11 @@ WSGI_APPLICATION = 'butique_ado.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
