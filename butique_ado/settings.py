@@ -64,7 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'butique_ado.urls'
+ROOT_URLCONF = 'boutique_ado.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -126,7 +126,7 @@ if 'DATABASE_URL' in os.environ:
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
-DATABASES = {
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
